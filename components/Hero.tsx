@@ -96,7 +96,7 @@ export default function Hero({ title, subtitle, primaryBtn, secondaryBtn }: Hero
                 <div className={`md:col-span-3 flex flex-col items-end justify-center h-full gap-8 order-3 transition-all duration-1000 delay-900 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
                     <div className="w-50 h-50 relative animate-[spin_20s_linear_infinite]">
                         <Image
-                            src="/assets/hero/planets-hero.png"
+                            src="/assets/hero/planets-Hero.png"
                             alt="Planets"
                             fill
                             className="object-contain"
