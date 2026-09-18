@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+import { Fragment, useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
 interface AboutSectionProps {
@@ -9,9 +9,21 @@ interface AboutSectionProps {
     text: string[];
 }
 
+// Reveal each sentence in turn, capped so the last line of a long "about"
+// never lands more than ~2s behind the first.
+const sentenceDelay = (index: number) => Math.min(400 + index * 90, 2000);
+
 export default function AboutSection({ title, subtitle, subtext, text }: AboutSectionProps) {
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef<HTMLElement>(null);
+
+    const paragraphs = text.map((paragraph) => paragraph.split(/(?<=[.!?])\s+/));
+    // Running sentence count at the start of each paragraph, so the stagger
+    // stays ordered across paragraph boundaries however long the copy gets.
+    const offsets = paragraphs.reduce<number[]>(
+        (acc, sentences, index) => [...acc, acc[index] + sentences.length],
+        [0]
+    );
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -75,22 +87,21 @@ export default function AboutSection({ title, subtitle, subtext, text }: AboutSe
                         )}
                     </div>
 
-                    <div className="text-xl md:text-2xl font-light leading-relaxed space-y-6 text-white">
-                        {text.map((paragraph, pIndex) => (
-                            <p key={pIndex} className="inline-block">
-                                {paragraph.split(/(?<=[.!?])\s+/).map((sentence, sIndex) => {
-                                    // Calculate a unique index for staggering across all sentences
-                                    const globalIndex = pIndex * 2 + sIndex;
-                                    return (
+                    <div className="text-lg md:text-xl font-light leading-relaxed space-y-6 text-white">
+                        {paragraphs.map((sentences, pIndex) => (
+                            <p key={pIndex}>
+                                {sentences.map((sentence, sIndex) => (
+                                    // Real space between sentences, not a margin: the gap has to
+                                    // survive being copied out of the page, not just look right.
+                                    <Fragment key={sIndex}>
                                         <span
-                                            key={sIndex}
-                                            className={`inline-block mr-1 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-                                            style={{ transitionDelay: `${600 + globalIndex * 200}ms` }}
+                                            className={`inline-block transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                                            style={{ transitionDelay: `${sentenceDelay(offsets[pIndex] + sIndex)}ms` }}
                                         >
                                             {sentence}
-                                        </span>
-                                    );
-                                })}
+                                        </span>{' '}
+                                    </Fragment>
+                                ))}
                             </p>
                         ))}
                     </div>

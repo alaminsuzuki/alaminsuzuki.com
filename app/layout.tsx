@@ -31,10 +31,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://alaminsuzuki.com'),
   title: {
-    default: "Al-Amin Suzuki — Design × Build × Identity",
+    default: "Al-Amin Suzuki — Product Manager",
     template: "%s | Al-Amin Suzuki",
   },
-  description: "Designer, Builder, and Entrepreneur based in France. J’aide les fondateurs et créatifs à bâtir leur identité en ligne.",
+  description: "Product Manager à Paris. Je construis les outils avec lesquels on décide, pas les chiffres qu’on livre. Disponible en novembre 2026.",
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
@@ -43,20 +43,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: '/',
-    title: "Al-Amin Suzuki — Design × Build × Identity",
-    description: "Designer, Builder, and Entrepreneur based in France.",
+    title: "Al-Amin Suzuki — Product Manager",
+    description: "Je construis les outils avec lesquels on décide, pas les chiffres qu’on livre.",
     siteName: "Al-Amin Suzuki",
     images: [{
       url: '/og.png',
       width: 1200,
       height: 630,
-      alt: "Al-Amin Suzuki Portfolio",
+      alt: "Al-Amin Suzuki — Product Manager",
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Al-Amin Suzuki — Design × Build × Identity",
-    description: "Designer, Builder, and Entrepreneur based in France.",
+    title: "Al-Amin Suzuki — Product Manager",
+    description: "Je construis les outils avec lesquels on décide, pas les chiffres qu’on livre.",
     images: ['/og.png'],
   },
   alternates: {
@@ -73,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className="scroll-smooth">
       <body
-        className={`${manrope.variable} ${syne.variable} ${majorMono.variable} antialiased bg-[#050608] text-[#F5F5F7] selection:bg-white/20`}
+        className={`${manrope.variable} ${syne.variable} ${majorMono.variable} antialiased bg-[#050608] text-[#F5F5F7]`}
       >
         <Navbar />
         <main className="pt-20 min-h-screen">

@@ -14,7 +14,7 @@ export default function MentionsLegales() {
                             <li><strong className="text-white">Al-Amin Suzuki</strong></li>
                             <li>Site portfolio personnel</li>
                             <li>Adresse : 1 allée Victor Vasarely, 06800 Cagnes-sur-Mer</li>
-                            <li>E-mail : <a href="mailto:hello@alaminsuzuki.com" className="text-white hover:underline">hello@alaminsuzuki.com</a></li>
+                            <li>E-mail : <a href="mailto:alaminsuzuki6@gmail.com" className="text-white hover:underline">alaminsuzuki6@gmail.com</a></li>
                         </ul>
                         <p className="pt-2">Directeur de la publication : <span className="text-white">Al-Amin Suzuki</span></p>
                     </div>
@@ -40,9 +40,18 @@ export default function MentionsLegales() {
                 </section>
 
                 <section className="space-y-6">
-                    <h2 className="font-display text-2xl font-bold text-gray-200">4. Données personnelles</h2>
+                    <h2 className="font-display text-2xl font-bold text-gray-200">4. Données personnelles et mesure d’audience</h2>
                     <p className="text-gray-400 leading-relaxed">
-                        Le Site <span className="text-white">alaminsuzuki.com</span> ne collecte aucune donnée personnelle via formulaire, cookies ou outils de mesure d’audience.
+                        Le Site <span className="text-white">alaminsuzuki.com</span> ne propose aucun formulaire de collecte et ne dépose aucun cookie, qu’il soit de première ou de tierce partie.
+                    </p>
+                    <p className="text-gray-400 leading-relaxed">
+                        Le Site utilise <span className="text-white">Vercel Web Analytics</span>, un outil de mesure d’audience sans cookie fourni par Vercel Inc. Les visiteurs y sont distingués au moyen d’une empreinte calculée à partir de la requête entrante, automatiquement supprimée au bout de 24 heures.
+                    </p>
+                    <p className="text-gray-400 leading-relaxed">
+                        Les informations suivantes peuvent être enregistrées à chaque consultation : horodatage, adresse de la page, site référent, paramètres d’URL, données de géolocalisation (pays, région, ville), type d’appareil, système d’exploitation et navigateur.
+                    </p>
+                    <p className="text-gray-400 leading-relaxed">
+                        Ces données sont agrégées et anonymes. Elles ne sont associées à aucune adresse IP, ne permettent pas de reconstituer la navigation d’un visiteur d’un site à l’autre, et ne font l’objet d’aucune revente.
                     </p>
                     <p className="text-gray-400 leading-relaxed">
                         Les échanges par e-mail s’effectuent à l’initiative de l’utilisateur.
@@ -75,7 +84,7 @@ export default function MentionsLegales() {
                         Les présentes mentions légales peuvent être modifiées à tout moment. Les utilisateurs sont invités à les consulter régulièrement.
                     </p>
                     <p className="text-gray-400 leading-relaxed pt-2">
-                        Dernière mise à jour : 14/12/2025
+                        Dernière mise à jour : 18/09/2026
                     </p>
                 </section>
             </div>

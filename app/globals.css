@@ -23,6 +23,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* One selection style for the whole site. The page alternates between the
+   near-black and near-white sections, so a per-section Tailwind `selection:`
+   utility ends up fighting the one on <body> and losing, which left selected
+   text white on the light hero. This accent reads on both grounds. */
+::selection {
+  background-color: #FF3B30;
+  color: #FFFFFF;
+}
+
 /* Custom Utilities */
 .bg-topography {
   background-image: var(--bg-topography);

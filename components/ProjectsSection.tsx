@@ -5,13 +5,12 @@ interface Project {
     title: string;
     description: string;
     tags: string[];
-    image: string;
-    hoverImage: string;
+    image?: string;
+    hoverImage?: string;
 }
 
 interface ProjectsSectionProps {
     title: string;
-    subtitle: string;
     projects: Project[];
 }
 
@@ -20,31 +19,39 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="group relative bg-black border-2 border-white/20 rounded-3xl overflow-hidden hover:border-white transition-colors duration-300 h-full">
             {/* Image placeholder area */}
             <div className="aspect-video bg-white/5 border-b border-white/10 relative overflow-hidden">
-                {/* Default Image - Dims on hover */}
-                <div className="absolute inset-0 transition-all duration-500 ease-out opacity-100 group-hover:opacity-40 group-hover:scale-95">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover"
-                    />
-                </div>
+                {project.image ? (
+                    <>
+                        {/* Default image. Only recedes on hover when there is a
+                            hover image behind it to take its place. */}
+                        <div className={`absolute inset-0 transition-all duration-500 ease-out opacity-100 ${project.hoverImage ? 'group-hover:opacity-40 group-hover:scale-95' : 'group-hover:scale-105'}`}>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
 
-                {/* Hover Image - Pops out (Steps up in scale and opacity) */}
-                <div className="absolute inset-0 transition-all duration-500 ease-out opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-110 origin-center z-10">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                        src={project.hoverImage}
-                        alt={`${project.title} Hover`}
-                        className="w-full h-full object-contain drop-shadow-2xl"
-                    />
-                </div>
-
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
-                    <span className="font-display text-4xl font-bold text-white opacity-0 group-hover:opacity-0 transition-opacity duration-300">
-                        {project.title.split('—')[0].trim()}
-                    </span>
-                </div>
+                        {/* Hover Image - Pops out (Steps up in scale and opacity) */}
+                        {project.hoverImage && (
+                            <div className="absolute inset-0 transition-all duration-500 ease-out opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-110 origin-center z-10">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    src={project.hoverImage}
+                                    alt=""
+                                    className="w-full h-full object-contain drop-shadow-2xl"
+                                />
+                            </div>
+                        )}
+                    </>
+                ) : (
+                    /* No visual yet: typographic fallback rather than a stock placeholder */
+                    <div className="absolute inset-0 flex items-center justify-center bg-grid-warp">
+                        <span className="font-display text-5xl md:text-6xl font-bold text-white/90 uppercase tracking-tighter text-center px-6">
+                            {project.title.split('—')[0].trim()}
+                        </span>
+                    </div>
+                )}
             </div>
 
             <div className="p-8">

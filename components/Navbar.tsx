@@ -27,14 +27,18 @@ export default function Navbar({ lang = 'fr' }: NavbarProps) {
 
     const labels = {
         fr: {
+            role: "Product Manager",
             about: "À propos",
             projects: "Projets",
             contact: "Contact",
+            cv: "CV",
         },
         en: {
+            role: "Product Manager",
             about: "About",
             projects: "Projects",
             contact: "Contact",
+            cv: "CV",
         }
     };
 
@@ -52,7 +56,7 @@ export default function Navbar({ lang = 'fr' }: NavbarProps) {
                         Al-Amin suzuki
                     </a>
                     <span className="hidden sm:block text-sm text-gray-500 font-medium">
-                        Web Designer & Developer
+                        {t.role}
                     </span>
                 </div>
 
@@ -61,6 +65,7 @@ export default function Navbar({ lang = 'fr' }: NavbarProps) {
                     <Link href="#about" className="text-sm text-gray-400 hover:text-white transition-colors">{t.about}</Link>
                     <Link href="#projects" className="text-sm text-gray-400 hover:text-white transition-colors">{t.projects}</Link>
                     <Link href="#contact" className="text-sm text-gray-400 hover:text-white transition-colors">{t.contact}</Link>
+                    <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="text-sm text-white border border-white/30 rounded-full px-3 py-1 hover:bg-white/10 transition-colors">{t.cv}</a>
 
                     <div className="h-4 w-px bg-white/10" />
 
@@ -97,6 +102,7 @@ export default function Navbar({ lang = 'fr' }: NavbarProps) {
                         <Link href="#about" onClick={() => setIsOpen(false)} className="hover:text-gray-400 transition-colors">{t.about}</Link>
                         <Link href="#projects" onClick={() => setIsOpen(false)} className="hover:text-gray-400 transition-colors">{t.projects}</Link>
                         <Link href="#contact" onClick={() => setIsOpen(false)} className="hover:text-gray-400 transition-colors">{t.contact}</Link>
+                        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="hover:text-gray-400 transition-colors">{t.cv}</a>
                     </div>
                 </div>
             </div>
