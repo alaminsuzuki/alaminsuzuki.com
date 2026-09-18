@@ -14,7 +14,7 @@ export default function Footer() {
     const isLegal = pathname === '/mentions-legales';
 
     const content = {
-        title: isEn ? "Let's talk" : "Parlons",
+        title: isEn ? "Let's talk" : "Discutons",
         text1: isEn
             ? "I'm looking for a Product Manager role from November 2026, in Paris. Tech product, ideally somewhere data is used to decide rather than to decorate."
             : "Je cherche un poste de Product Manager à partir de novembre 2026, sur Paris. Produit tech, idéalement là où la donnée sert à décider.",

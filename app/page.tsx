@@ -62,7 +62,7 @@ export default function Home() {
           "Je prototype au lieu d’attendre une maquette, je parle aux développeurs sans traducteur, et j’écris des specs qu’on peut implémenter sans revenir me voir trois fois.",
           "Chez Believe : discovery utilisateur, specs et user stories, plan de tracking. J’ai creusé l’usage d’une fonctionnalité déjà livrée, et très peu de gens la trouvaient. Personne n’avait eu tort avant, on n’avait juste pas le chiffre. On a ajouté un point d’entrée dans l’interface, et l’adoption est repartie.",
           "Avant ça, plusieurs années à concevoir et développer des sites et des identités de marque, et un studio que je dirige encore. C’est là que j’ai appris ce que coûte une spec floue.",
-          "Je construis aussi mes propres outils : mes tâches sortent des transcripts de réunion, mes tickets se rédigent à deux, et un calcul d’usage hebdomadaire tourne en script avec un test qui s’arrête si le résultat dérive. Je n’attends pas qu’on m’outille."
+          "Je construis aussi mes propres outils : mes tâches sortent des transcripts de réunion, mes tickets se rédigent à deux, et un calcul d’usage hebdomadaire tourne en script avec un test qui s’arrête si le résultat dérive."
         ]}
       />
       <ProjectsSection

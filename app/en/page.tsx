@@ -62,7 +62,7 @@ export default function HomeEn() {
                     "I prototype instead of waiting for a mockup, I talk to developers without a translator, and I write specs you can implement without coming back to me three times.",
                     "At Believe: user discovery, specs and user stories, tracking plans. I dug into the usage of a feature we had already shipped, and very few people were finding it. Nobody had been wrong before, we just didn’t have the number. We added an entry point in the interface, and adoption picked back up.",
                     "Before that, several years designing and building websites and brand identities, and a studio I still run. That’s where I learned what a vague spec costs.",
-                    "I also build my own tools: my tasks come out of meeting transcripts, my tickets get drafted in pairs, and a weekly usage calculation runs as a script with a test that halts if the result drifts. I don’t wait to be handed tooling."
+                    "I also build my own tools: my tasks come out of meeting transcripts, my tickets get drafted in pairs, and a weekly usage calculation runs as a script with a test that halts if the result drifts."
                 ]}
             />
             <ProjectsSection
