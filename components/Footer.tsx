@@ -105,9 +105,9 @@ export default function Footer() {
                                 <div className="absolute top-4 right-4 text-4xl opacity-0 group-hover:opacity-100 transition-opacity translate-x-4 group-hover:translate-x-0 duration-300">↘</div>
                             </a>
 
-                            {/* Instagram - Yellow */}
-                            <a href="https://www.instagram.com/alaminsuzuki_/" target="_blank" rel="noopener noreferrer" className={`group relative bg-[#FFCC00] rounded-3xl p-6 flex flex-col justify-end overflow-hidden hover:scale-[1.02] transition-transform md:col-span-2 lg:col-span-1 ${getTransition()}`} style={{ transitionDelay: '900ms' }}>
-                                <span className="font-display text-4xl font-bold text-white relative z-10">Instagram</span>
+                            {/* GitHub - Yellow */}
+                            <a href="https://github.com/alaminsuzuki" target="_blank" rel="noopener noreferrer" className={`group relative bg-[#FFCC00] rounded-3xl p-6 flex flex-col justify-end overflow-hidden hover:scale-[1.02] transition-transform md:col-span-2 lg:col-span-1 ${getTransition()}`} style={{ transitionDelay: '900ms' }}>
+                                <span className="font-display text-4xl font-bold text-white relative z-10">GitHub</span>
                                 <div className="absolute top-4 right-4 text-4xl text-white opacity-0 group-hover:opacity-100 transition-opacity translate-x-4 group-hover:translate-x-0 duration-300">↘</div>
                             </a>
 

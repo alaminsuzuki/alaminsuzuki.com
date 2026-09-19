@@ -23,7 +23,10 @@ export default function Hero({ marquee, name, role, lead, body, primaryBtn, seco
     }, []);
 
     return (
-        <section className="sticky top-0 min-h-screen z-0 flex flex-col pt-12 md:pt-0 overflow-hidden bg-[#F5F5F7] text-[#050608]">
+        // Pinned only from md up. On phones the hero is taller than the viewport,
+        // so pinning it puts the CTAs below the fold and the About section slides
+        // over them before they can be tapped.
+        <section className="relative md:sticky md:top-0 min-h-screen z-0 flex flex-col pt-12 md:pt-0 overflow-hidden bg-[#F5F5F7] text-[#050608]">
 
             {/* Rocket Animation - On Load */}
             <div className="absolute bottom-0 left-0 z-50 w-96 h-96 animate-rocket pointer-events-none">
